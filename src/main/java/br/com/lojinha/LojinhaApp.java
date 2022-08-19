@@ -15,13 +15,13 @@ public class LojinhaApp {
 
         Produto meuProduto = new Produto();
 
-        meuProduto.nome = "Caneta";
-        meuProduto.valor = 1.25;
-        meuProduto.marca = "Bic";
-        meuProduto.tamanho = "Medio";
-        meuProduto.itensInclusos = "tampa";
+        meuProduto.setNome("Caaneta");
+        meuProduto.setValor(1.25);
+        meuProduto.setMarca("Bic");
+        meuProduto.setTamanho("Medio");
+        meuProduto.setItensInclusos("tampa");
 
-        System.out.println(meuProduto.nome);
+        System.out.println(meuProduto.getValor());
 
 
     }
