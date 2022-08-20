@@ -16,6 +16,17 @@ public class Produto {
     private Tamanho tamanho; //Novo tipo com base no arquivo Tamanho.java que é uma lista imutável
     private List<String> itensInclusos; //Para fazer lista coloque modificador List<tipo do atributos>
 
+    //Construtor
+    /*-----------------------------AULA SOBRE CONSTRUTORES----------------------------*/
+    /*Construtores servem para dar informações a um objeto durante a instanciação
+    * Se colocar paramentros, no momento da instanciação do objeto, é obrigatório informar os dados que foram requisitados pelo Construtor*/
+    public Produto(String marcaInicial, Tamanho tamanhoInicial){
+        //Definir comando que serão iniciados durante a instanciação
+        setMarca(marcaInicial); //Na aula o Julio de Lima usou this.marca = "Sony"; ,porém eu preferi aproveitar o método setMarca
+        setTamanho(tamanhoInicial);
+    }
+
+
     //Métodos Getters e Setters
     public double getValor() {//Motificador, tipo de retorno, nome do método (paramentos)
         return  this.valor;

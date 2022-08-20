@@ -24,15 +24,17 @@ public class LojinhaApp {
         * É feito isso através da alteração do Modificador do atributos para que sejam privados e da criação de Métodos (Getters e Setters) que atribuem e capturam o valor atual do atributo.
         * Sendo Private para uso somente dentro da classe, Protected para uso da própria classe e classes hedeiras*/
 
-        Produto meuProduto = new Produto();
+        Produto meuProduto = new Produto("Bic", Tamanho.PEQUENO); //CONSTRUTOR com parametro Marca
+        System.out.println(meuProduto.getTamanho());
 
-        meuProduto.setNome("Caaneta");
+        meuProduto.setNome("Caneta");
         meuProduto.setValor(1.50); //Se deixar valor zero vai dá erro de exceção conforme programado na classe Produto
-        meuProduto.setMarca("Bic");
+        //meuProduto.setMarca("Bic"); - Como era antes da aula sobre CONSTRUTOR
         meuProduto.setTamanho(Tamanho.MEDIO); //Novo tipo com base no arquivo Tamanho.java que é uma lista imutável
 
         System.out.println(meuProduto.getValor());
         System.out.println(meuProduto.getTamanho());
+        System.out.println(meuProduto.getMarca());
 
     /*-----------------------------AULA SOBRE LISTAS-----------------------------*/
         /*Listas são um tupo muito interessante de objeto, elas permitem abrigarmos um conjunto de elementos(valores ou objetos) dentro de um único objeto, algo muito utilizado em qualquer tipo de aplicação*/
