@@ -1,12 +1,19 @@
 package br.com.lojinha.pojo;
+import br.com.lojinha.enums.Tamanho;
+
 import java.util.List; //Para listas no Java, tem que fazer essa importação
 
 public class Produto {
+    /*Classes servem para definir qual é o aspecto e ações de um objeto.
+     Classes podem ser comparados a receitas de um bolo, planta de uma casa, molde de um biscoito em forma de estrela, etc*/
+
     //Atributos
+    /*Atributos servem para definir qual é os aspectos de seus objetos, em JAVA são variáveis específicas de uma classe e servem para descrever as propriedades de um objeto*/
     private String nome;
     private String marca;
     private double valor;
-    private String tamanho;
+    //private String tamanho; - Como era antes de criar o arquivo Tamanho.java com o tipo Enums
+    private Tamanho tamanho; //Novo tipo com base no arquivo Tamanho.java que é uma lista imutável
     private List<String> itensInclusos; //Para fazer lista coloque modificador List<tipo do atributos>
 
     //Métodos Getters e Setters
@@ -16,6 +23,7 @@ public class Produto {
 
     public void setValor(double novoValor){//Motificador, tipo de retorno é void porque não há retorno,nome do método (paramentos)
         /*-----------------------------AULA SOBRE CONDICIONAIS----------------------------*/
+        /*Condicionais nos ajudam a tomar decisões com base em comparações.*/
         if(novoValor > 0) {
             this.valor = novoValor;
         }else{
@@ -41,12 +49,36 @@ public class Produto {
         this.marca = novaMarca;
     }
 
-    public String getTamanho() {
+    public Tamanho getTamanho() {
         return this.tamanho;
     }
 
-    public void setTamanho(String novoTamanho) {
+    public void setTamanho(Tamanho novoTamanho) {
+    //public void setTamanho(String novoTamanho) { //Como era antes de ser criado Tamanho.java de lista imutável
+        /*-----------------------------AULA SOBRE ENUMS-----------------------------*/
+        /*Enums servem para definir uma lista imutável e predeterminada de valores que são geralmente utilizados para atribuição e comparação.
+         *
+         * O tamanho do Produto, por exemplo, possui apenas 3 variações:
+         * - Pequeno | - Médio | - Grande*/
+
+        /* No caso de lista imutável, até daria para fazer condicional conforme abaixo, porém não é a melhor forma de fazer:
+        if (novoTamanho.equalsIgnoreCase("Pequeno") || novoTamanho.equalsIgnoreCase("Medio") || novoTamanho.equalsIgnoreCase("Grande")){
+            this.tamanho = novoTamanho;
+        } else {
+            throw new IllegalArgumentException("Tamanho pode ser Pequeno, Medio ou Grande");
+        }
+        */
+
+        /*A melhor forma é utilizar enumeradores, foi criado o pacote enums e dentro arquivo Tamanho.java em que a classe é tipo "enum":
+        package br.com.lojinha.enums;
+
+            public enum Tamanho {
+                PEQUENO, MEDIO, GRANDE;
+            }
+        */
+
         this.tamanho = novoTamanho;
+
     }
 
 
