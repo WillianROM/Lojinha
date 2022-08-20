@@ -1,4 +1,5 @@
 package br.com.lojinha.pojo;
+import java.util.List; //Para listas no Java, tem que fazer essa importação
 
 public class Produto {
     //Atributos
@@ -6,7 +7,7 @@ public class Produto {
     private String marca;
     private double valor;
     private String tamanho;
-    private String itensInclusos;
+    private List<String> itensInclusos; //Para fazer lista coloque modificador List<tipo do atributos>
 
     //Métodos Getters e Setters
     public double getValor() {//Motificador, tipo de retorno, nome do método (paramentos)
@@ -14,6 +15,7 @@ public class Produto {
     }
 
     public void setValor(double novoValor){//Motificador, tipo de retorno é void porque não há retorno,nome do método (paramentos)
+        /*-----------------------------AULA SOBRE CONDICIONAIS----------------------------*/
         if(novoValor > 0) {
             this.valor = novoValor;
         }else{
@@ -48,11 +50,11 @@ public class Produto {
     }
 
 
-    public String getItensInclusos() {
+    public List<String> getItensInclusos() { //Para listas também é necessário atualizar o Get para List<tipo de retorno>
         return itensInclusos;
     }
 
-    public void setItensInclusos(String novosItensInclusos) {
+    public void setItensInclusos(List<String> novosItensInclusos) {//Para listas também é necessário atualizar o parâmetro deo Set para List<tipo do parâmetro>
         this.itensInclusos = novosItensInclusos;
     }
 }
