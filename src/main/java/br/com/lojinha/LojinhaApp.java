@@ -16,7 +16,7 @@ public class LojinhaApp {
         Produto meuProduto = new Produto();
 
         meuProduto.setNome("Caaneta");
-        meuProduto.setValor(1.25);
+        meuProduto.setValor(0);
         meuProduto.setMarca("Bic");
         meuProduto.setTamanho("Medio");
         meuProduto.setItensInclusos("tampa");

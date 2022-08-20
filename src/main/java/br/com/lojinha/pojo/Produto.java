@@ -14,8 +14,14 @@ public class Produto {
     }
 
     public void setValor(double novoValor){//Motificador, tipo de retorno é void porque não há retorno,nome do método (paramentos)
-        this.valor = novoValor;
+        if(novoValor > 0) {
+            this.valor = novoValor;
+        }else{
+            //'throw new' é usado para lançar uma nova exceção
+            throw new IllegalArgumentException("Valores devem ser maiores que 0");
+        }
     }
+
 
     public String getNome() {
         return this.nome;
