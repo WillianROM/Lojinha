@@ -3,9 +3,10 @@ package br.com.lojinha;
 import br.com.lojinha.enums.Tamanho;
 import br.com.lojinha.pojo.ItemIncluso;
 import br.com.lojinha.pojo.Produto;
+import br.com.lojinha.pojo.ProdutoInternacional;
+import br.com.lojinha.pojo.ProdutoNacional;
 
-import java.util.ArrayList;
-import java.util.List;//Para listas no Java, tem que fazer essa importação
+import java.util.*;
 
 public class LojinhaApp {
     public static void main(String[] args) { //Método principal é criado depois de digitar psvm
@@ -67,8 +68,7 @@ public class LojinhaApp {
 
         //Laço que fiz antes da aula sobre Laços:
         for (ItemIncluso item: itensInclusos){
-            System.out.printf("[Nome do Item: %s | Quantidade: %d]", item.getNomeDoItem(), item.getQuantidade());
-            System.out.println(); // Para quebrar a linha do código anterior
+            System.out.printf("[Nome do Item: %s | Quantidade: %d]\n", item.getNomeDoItem(), item.getQuantidade());
         }
 
         //Laço criado durante a aula
@@ -80,5 +80,36 @@ public class LojinhaApp {
             System.out.println(itemAtual.getQuantidade());
         }
 
+        /*-----------------------------AULA SOBRE HERANÇA-----------------------------*/
+        //Produto Nacional:
+        System.out.println("=====PRODUTO NACIONAL====");
+        ProdutoNacional computador = new ProdutoNacional("Positivo", Tamanho.GRANDE);
+
+        //Atributo que a classe ProdutoNacional herdou da classe Produto:
+        System.out.println(computador.getMarca());
+
+        //Atributo próprio da classe Produto Nacional:
+        computador.setImpostoNacional(0.55845);
+
+        System.out.println(computador.getImpostoNacional());
+
+        //Produto Internacional
+        System.out.println("=====PRODUTO INTERNACIONAL====");
+        ProdutoInternacional celular = new ProdutoInternacional("Sansung", Tamanho.MEDIO);
+
+        //Atributo que a classe ProdutoInternacional herdou da classe Produto:
+        List<ItemIncluso> itensInclusosNoCelular = new ArrayList<>();
+        ItemIncluso carregador = new ItemIncluso(1, "carregador");
+        ItemIncluso caboUSB = new ItemIncluso(1,"Cabo USB");
+        itensInclusosNoCelular.add(carregador);
+        itensInclusosNoCelular.add(caboUSB);
+
+        for (ItemIncluso item:itensInclusosNoCelular){
+            System.out.printf("[Nome do item: %s | Quantidade: %d]\n", item.getNomeDoItem(), item.getQuantidade());
+        }
+
+        //Atributo próprio da classe Produto Internacional:
+        celular.setTaxaDeImportacao(1.50);
+        System.out.println(celular.getTaxaDeImportacao());
     }
 }
