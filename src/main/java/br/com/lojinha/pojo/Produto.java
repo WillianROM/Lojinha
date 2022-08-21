@@ -13,7 +13,7 @@ public class Produto {
     /*Atributos servem para definir qual é os aspectos de seus objetos, em JAVA são variáveis específicas de uma classe e servem para descrever as propriedades de um objeto*/
     private String nome;
     private String marca;
-    private double valor;
+    protected double valor; //Durante a aula de Polimorfismo foi alterado o modificador de private para protected
     //private String tamanho; - Como era antes de criar o arquivo Tamanho.java com o tipo Enums
     private Tamanho tamanho; //Novo tipo com base no arquivo Tamanho.java que é uma lista imutável
    //private List<String> itensInclusos; //Antes do Exercício prático
@@ -25,8 +25,8 @@ public class Produto {
     * Se colocar paramentros, no momento da instanciação do objeto, é obrigatório informar os dados que foram requisitados pelo Construtor*/
     public Produto(String marcaInicial, Tamanho tamanhoInicial){
         //Definir comando que serão iniciados durante a instanciação
-        setMarca(marcaInicial); //Na aula o Julio de Lima usou this.marca = "Sony"; ,porém eu preferi aproveitar o método setMarca
-        setTamanho(tamanhoInicial);
+        this.setMarca(marcaInicial); //Na aula o Julio de Lima usou this.marca = "Sony"; ,porém eu preferi aproveitar o método setMarca
+        this.setTamanho(tamanhoInicial);
     }
 
 

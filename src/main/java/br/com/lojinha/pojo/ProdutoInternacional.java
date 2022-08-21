@@ -24,5 +24,17 @@ public class ProdutoInternacional extends Produto {
         this.taxaDeImportacao = taxaDeImportacao;
     }
 
+    /*-----------------------------AULA SOBRE POLIMORFISMO-----------------------------*/
+    //Um conceito muito relacionado a Herança é o Polimorfismo, que permite que você utilize os mesmos métodos, mas atribua a eles comportamentos distintos.
 
+    @Override
+    public void setValor(double novoValor) {
+        if(novoValor > -100) {
+        /*Na aula o Julio usou "this.valor = novoValo;", porém eu preferi super.valor = novoValor;*/
+            super.valor = novoValor;
+        }else{
+            throw new IllegalArgumentException("Valores devem ser maiores que -100");
+        }
+
+    }
 }

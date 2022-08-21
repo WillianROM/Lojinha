@@ -111,5 +111,9 @@ public class LojinhaApp {
         //Atributo próprio da classe Produto Internacional:
         celular.setTaxaDeImportacao(1.50);
         System.out.println(celular.getTaxaDeImportacao());
+
+        /*-----------------------------AULA SOBRE POLIMORFISMO-----------------------------*/
+        celular.setValor(-99);
+        System.out.println(celular.getValor());
     }
 }
