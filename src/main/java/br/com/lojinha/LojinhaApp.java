@@ -1,6 +1,7 @@
 package br.com.lojinha;
 
 import br.com.lojinha.enums.Tamanho;
+import br.com.lojinha.pojo.ItemIncluso;
 import br.com.lojinha.pojo.Produto;
 
 import java.util.ArrayList;
@@ -25,6 +26,9 @@ public class LojinhaApp {
         * Sendo Private para uso somente dentro da classe, Protected para uso da própria classe e classes hedeiras*/
 
         Produto meuProduto = new Produto("Bic", Tamanho.PEQUENO); //CONSTRUTOR com parametro Marca
+        ItemIncluso tampa = new ItemIncluso(1,"tampa");
+        ItemIncluso caneteiro = new ItemIncluso(1,"caneteiro");
+
         System.out.println(meuProduto.getTamanho());
 
         meuProduto.setNome("Caneta");
@@ -39,16 +43,17 @@ public class LojinhaApp {
     /*-----------------------------AULA SOBRE LISTAS-----------------------------*/
         /*Listas são um tupo muito interessante de objeto, elas permitem abrigarmos um conjunto de elementos(valores ou objetos) dentro de um único objeto, algo muito utilizado em qualquer tipo de aplicação*/
         //Para listas tem que criar uma váriavel do tipo List<tipo da lista>, assim coloque o nome da variável instanciando new ArrayList():
-        List<String> itensInclusos = new ArrayList<>(); //Lista de String vazio
+        List<ItemIncluso> itensInclusos = new ArrayList<>(); //Lista de String vazio
 
         //Assim comece a adicionar itens na lista:
-        itensInclusos.add("tampa"); //Item 0 (Base ZERO)
-        itensInclusos.add("caneteiro"); //Item 1 (Base ZERO)
+        itensInclusos.add(tampa); //Item 0 (Base ZERO)
+        itensInclusos.add(caneteiro); //Item 1 (Base ZERO)
 
         //Coloque a variável tipo de Lista dentro do respectivo set:
         meuProduto.setItensInclusos(itensInclusos);
 
-        System.out.println(meuProduto.getItensInclusos());
+
+
 
         //Utilize o método size para contar a quantidade de itens da Lista:
         System.out.println(meuProduto.getItensInclusos().size());
@@ -57,6 +62,9 @@ public class LojinhaApp {
         System.out.println(meuProduto.getItensInclusos().get(1));
         System.out.println(meuProduto.getItensInclusos().get(0));
 
+        for (ItemIncluso item: itensInclusos){
+            System.out.printf("[Nome do Item: %s | Quantidade: %d]", item.getNomeDoItem(), item.getQuantidade());
+        }
 
 
     }

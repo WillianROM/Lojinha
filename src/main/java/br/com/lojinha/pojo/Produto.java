@@ -1,5 +1,7 @@
 package br.com.lojinha.pojo;
+
 import br.com.lojinha.enums.Tamanho;
+//Como Produto.java e ItensAdicionais.java estão no mesmo pacote, automaticamente já são "importadas" entre si, sem precisar aparecer aqui
 
 import java.util.List; //Para listas no Java, tem que fazer essa importação
 
@@ -14,7 +16,8 @@ public class Produto {
     private double valor;
     //private String tamanho; - Como era antes de criar o arquivo Tamanho.java com o tipo Enums
     private Tamanho tamanho; //Novo tipo com base no arquivo Tamanho.java que é uma lista imutável
-    private List<String> itensInclusos; //Para fazer lista coloque modificador List<tipo do atributos>
+   //private List<String> itensInclusos; //Antes do Exercício prático
+    private List<ItemIncluso> itensInclusos; //Para fazer lista coloque modificador List<tipo do atributos>
 
     //Construtor
     /*-----------------------------AULA SOBRE CONSTRUTORES----------------------------*/
@@ -93,11 +96,11 @@ public class Produto {
     }
 
 
-    public List<String> getItensInclusos() { //Para listas também é necessário atualizar o Get para List<tipo de retorno>
+    public List<ItemIncluso> getItensInclusos() { //Para listas também é necessário atualizar o Get para List<tipo de retorno>
         return itensInclusos;
     }
 
-    public void setItensInclusos(List<String> novosItensInclusos) {//Para listas também é necessário atualizar o parâmetro deo Set para List<tipo do parâmetro>
+    public void setItensInclusos(List<ItemIncluso> novosItensInclusos) {//Para listas também é necessário atualizar o parâmetro deo Set para List<tipo do parâmetro>
         this.itensInclusos = novosItensInclusos;
     }
 }
