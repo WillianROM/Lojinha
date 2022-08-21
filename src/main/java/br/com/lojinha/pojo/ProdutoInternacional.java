@@ -3,8 +3,9 @@ package br.com.lojinha.pojo;
 //Herança te ajuda a criar classes que possuem as mesmas características de outras classes, economizando muitas linhas de código.
 
 import br.com.lojinha.enums.Tamanho;
+import br.com.lojinha.interfaces.Favorito;
 
-public class ProdutoInternacional extends Produto {
+public class ProdutoInternacional extends Produto implements Favorito {
 
 
     //Atributos
@@ -36,5 +37,11 @@ public class ProdutoInternacional extends Produto {
             throw new IllegalArgumentException("Valores devem ser maiores que -100");
         }
 
+    }
+
+    /*-----------------------------AULA SOBRE INTERFACES-----------------------------*/
+//Interfaces servem para que você crie contratos, ou seja, obrigações a serem seguidas por qualquer classe que assinar aquele contrato.
+    public String getDadosFavoritos() {
+        return this.getNome() + ", " + this.getMarca() + " e " + this.getValor();
     }
 }
