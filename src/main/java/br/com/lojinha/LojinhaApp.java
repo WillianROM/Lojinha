@@ -62,10 +62,23 @@ public class LojinhaApp {
         System.out.println(meuProduto.getItensInclusos().get(1));
         System.out.println(meuProduto.getItensInclusos().get(0));
 
+        /*-----------------------------AULA SOBRE LAÇOS-----------------------------*/
+        //Laços podem nos ajudar a interagir com listas de valores ou objetos.
+
+        //Laço que fiz antes da aula sobre Laços:
         for (ItemIncluso item: itensInclusos){
             System.out.printf("[Nome do Item: %s | Quantidade: %d]", item.getNomeDoItem(), item.getQuantidade());
+            System.out.println(); // Para quebrar a linha do código anterior
         }
 
+        //Laço criado durante a aula
+        /*System.out.println(meuProduto.getItensInclusos().get(0).getNomeDoItem());
+        System.out.println(meuProduto.getItensInclusos().get(0).getQuantidade());*/
+
+        for (ItemIncluso itemAtual: meuProduto.getItensInclusos()){
+            System.out.println(itemAtual.getNomeDoItem());
+            System.out.println(itemAtual.getQuantidade());
+        }
 
     }
 }
