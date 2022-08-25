@@ -118,7 +118,6 @@ public class LojinhaApp {
         celular.setValor(0);
         System.out.println(celular.getValor());
 
-        /*-----------------------------AULA SOBRE INTERFACES-----------------------------*/
-        //Interfaces servem para que você crie contratos, ou seja, obrigações a serem seguidas por qualquer classe que assinar aquele contrato.
+
     }
 }
