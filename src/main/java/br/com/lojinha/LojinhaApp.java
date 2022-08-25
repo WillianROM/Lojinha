@@ -115,7 +115,7 @@ public class LojinhaApp {
         /*-----------------------------AULA SOBRE POLIMORFISMO-----------------------------*/
         celular.setValor(-99);
         System.out.println(celular.getValor());
-        celular.setValor(10);
+        celular.setValor(0);
         System.out.println(celular.getValor());
 
         /*-----------------------------AULA SOBRE INTERFACES-----------------------------*/
